@@ -10,9 +10,9 @@ all: options dmenu stest
 
 options:
 	@echo dmenu build options:
-	@echo "CFLAGS   = $(CFLAGS)"
-	@echo "LDFLAGS  = $(LDFLAGS)"
-	@echo "CC       = $(CC)"
+	@echo "CFLAGS  = $(CFLAGS)"
+	@echo "LDFLAGS = $(LDFLAGS)"
+	@echo "CC      = $(CC)"
 
 .c.o:
 	$(CC) -c $(CFLAGS) $<
@@ -29,7 +29,7 @@ stest: stest.o
 	$(CC) -o $@ stest.o $(LDFLAGS)
 
 clean:
-	rm -f dmenu stest $(OBJ) dmenu-$(VERSION).tar.gz
+	rm -f dmenu stest $(OBJ) dmenu-$(VERSION).tar.gz config.h
 
 dist: clean
 	mkdir -p dmenu-$(VERSION)
