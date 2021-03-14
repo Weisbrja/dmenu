@@ -795,16 +795,16 @@ main(int argc, char *argv[])
 	drw = drw_create(dpy, screen, root, wa.width, wa.height);
 	readxresources();
 	/* Now we check whether to override xresources with commandline parameters */
-	if ( tempfonts )
-	   fonts[0] = strdup(tempfonts);
-	if ( colortemp[0])
-	   colors[SchemeNorm][ColBg] = strdup(colortemp[0]);
-	if ( colortemp[1])
-	   colors[SchemeNorm][ColFg] = strdup(colortemp[1]);
-	if ( colortemp[2])
-	   colors[SchemeSel][ColBg]  = strdup(colortemp[2]);
-	if ( colortemp[3])
-	   colors[SchemeSel][ColFg]  = strdup(colortemp[3]);
+	if (tempfonts)
+		fonts[0] = strdup(tempfonts);
+	if (colortemp[0])
+		colors[SchemeNorm][ColBg] = strdup(colortemp[0]);
+	if (colortemp[1])
+		colors[SchemeNorm][ColFg] = strdup(colortemp[1]);
+	if (colortemp[2])
+		colors[SchemeSel][ColBg]  = strdup(colortemp[2]);
+	if (colortemp[3])
+		colors[SchemeSel][ColFg]  = strdup(colortemp[3]);
 
 	if (!drw_fontset_create(drw, (const char**)fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
